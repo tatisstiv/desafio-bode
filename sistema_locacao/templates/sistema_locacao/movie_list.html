@@ -1,0 +1,9 @@
+<html>
+    <head></head>
+    <body>
+        {% for movie in movies %}
+            <img src="{{movie.cover_image.url}}">
+            <p>{{ movie.title }}</p>
+        {% endfor %}
+    </body>
+</html>
