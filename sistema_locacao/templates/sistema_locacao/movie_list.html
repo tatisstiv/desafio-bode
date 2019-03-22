@@ -4,6 +4,9 @@
         {% for movie in movies %}
             <img src="{{movie.cover_image.url}}">
             <p>{{ movie.title }}</p>
+            <form action="{% url 'rent' pk=movie.id %}" method=POST>{% csrf_token %}
+                <button id="rent-btn" type="submit">Rent</button>
+            </form>
         {% endfor %}
     </body>
 </html>

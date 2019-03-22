@@ -1,6 +1,5 @@
 from django.conf import settings
 from django.db import models
-from django.utils import timezone
 
 
 class Movie(models.Model):
@@ -9,6 +8,3 @@ class Movie(models.Model):
     cover_image = models.ImageField(upload_to='movies')
 
 
-    def rent(self):
-        self.rented = True
-        self.save()
