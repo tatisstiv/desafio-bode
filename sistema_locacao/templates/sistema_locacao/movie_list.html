@@ -1,12 +1,22 @@
 <html>
     <head></head>
     <body>
-        {% for movie in movies %}
-            <img src="{{movie.cover_image.url}}">
-            <p>{{ movie.title }}</p>
-            <form action="{% url 'rent' pk=movie.id %}" method=POST>{% csrf_token %}
-                <button id="rent-btn" type="submit">Rent</button>
-            </form>
-        {% endfor %}
+        <table>
+            <tr>
+                {% for movie in movies %}
+                   <td style="text-align: center; padding: 20px"> 
+                       <img src="{{movie.cover_image.url}}" style="width: 201px">
+                       <p>{{ movie.title }}</p>
+                       <form action="{% url 'rent' pk=movie.id %}" method=POST>{% csrf_token %}
+                            <button id="rent-btn" type="submit">Alugar</button>
+                        </form>
+                    </td>
+                    {% if not forloop.last and forloop.counter == 3 %}
+            </tr>
+            <tr>
+                {% endif %}
+                {% endfor %}
+            </tr>
+        </table>
     </body>
 </html>
