@@ -1,1 +1,1 @@
-docker-compose up
+Para ver o sistema funcionando basta rodar o comando ```docker-compose up``` na pasta raiz e acessar localhost:8000 no browser
