@@ -10,4 +10,4 @@ def rent(request, pk):
     movie = Movie.objects.get(pk=pk)
     movie.rented = True
     movie.save()
-    return redirect(request, '')
+    return redirect('movie_list')

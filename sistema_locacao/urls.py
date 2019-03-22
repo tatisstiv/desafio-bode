@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.movie_list, name='movie_list'),
-    path(r'^(?P<pk>\d+)$', views.rent, name='rent'),
+    path('<int:pk>', views.rent, name='rent'),
 ]
